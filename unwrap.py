@@ -24,7 +24,7 @@ def decode_base64_package(base64str):
         decoded += chr(charmap[ord(chr(base64dec[byte]))])
 
     return zlib.decompress(bytearray(decoded.encode('latin-1')))
-    
+
 
 if len(sys.argv) < 2:
     sys.stderr.write("Usage: %s wrapped-code [outfile]\n" % sys.argv[0])
