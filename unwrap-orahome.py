@@ -2,7 +2,17 @@
 
 import os
 import re
+import glob
 import plsql_unwrap
+
+dest_dir = 'unwrapped'
+
+if os.path.exists(dest_dir):
+    files = glob.glob(os.path.join(dest_dir, '*'))
+    for file in files:
+        os.unlink(file)  # Remove the file or link
+else:
+    os.makedirs(dest_dir)
 
 def extract_create_statements(file_content):
     pattern  = r"create.*?wrapped(.*?)^/$"
@@ -23,7 +33,7 @@ if not os.path.isdir(orahome_rdbms_admin):
 def write_file(name, content):
     sql_filename = name + '.sql'
     
-    file_path = os.path.join('unwrapped', sql_filename)
+    file_path = os.path.join(dest_dir, sql_filename)
     
     if os.path.exists(file_path):
        print(f'The file {sql_filename} already exists')
