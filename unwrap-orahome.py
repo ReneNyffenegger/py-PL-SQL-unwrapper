@@ -42,7 +42,7 @@ for filename in os.listdir(orahome_rdbms_admin):
             plbfiletext = plbfile.read()
 
             for create_statement in extract_create_statements(plbfiletext):
-                unwrapped = unwrap_plsql.unwrap(create_statement)
+                unwrapped = plsql_unwrap.unwrap(create_statement)
 
                 unwrapped_first_line = unwrapped.split('\n')[0]
 #               print('  ' + unwrapped_first_line)
