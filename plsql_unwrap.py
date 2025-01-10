@@ -8,7 +8,7 @@
 # See https://github.com/DarkAngelStrike/UnwrapperPLSQL
 #
 # V.1 Adapted by René Nyffenegger for Python 3
-# V.2 Add extract_interesting(), 
+# V.2 Add extract_interesting()
 #
 # License: Public domain
 #

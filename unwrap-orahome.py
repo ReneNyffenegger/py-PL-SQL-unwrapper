@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# V.2: write file names in lower case
+
 import os
 import re
 import glob
