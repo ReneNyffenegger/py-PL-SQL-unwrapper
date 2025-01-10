@@ -67,7 +67,8 @@ for filename in os.listdir(orahome_rdbms_admin):
                    quit()
 
                 if match.group(1) != None:
-                   object_name = f'{object_name}-{match.group(1).strip()}'.lower()
+                   object_name = f'{object_name}-{match.group(1).strip()}'
 
+                object_name = object_name.lower()
 
                 write_file(object_name, unwrapped)
